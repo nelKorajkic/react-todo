@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+* {
+  font-family: 'Roboto', sans-serif;
+  transition: all 0.3s ease-in-out;
+}
+
+#root {
+  margin-top: -20px;
+}
+.App {
+  text-align: center;
+}
+body {
+  background-color: #eee;
+}
+
+.App-header {
+  -webkit-font-smoothing: anti-aliased;
+  background-color: #94d59f;
+  color: #437e4d;
+  box-shadow: 0px 33px 1px 10px rgba(34, 34, 34, .1);}
+
+.appInput {
+  background-color: #437e4d;
+  color: darkgray;
+  margin-top: -20px;
+}
+
+.inputField {
+  padding: 10px;
+  width: 30%;
+  min-width: 50%;
+}
+.appInputText {
+  text-align: center;
+}
+
+.appText {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.container {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, .4);
+  clear: both;
+  height: auto;
+
+}
+.clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+.ulContainer {
+  margin-left: auto;
+  margin-right: auto;
+  transition: display 2s ease-out 1s;
+
+}
+.item {
+  transition: display 2s ease-out 1s;
+  float: left;
+}
+.checkBox {
+  transition: display 2s ease-out 1s;
+  float: right;
+}
+
+li {
+  transition: display 2s ease-out 1s;
+  list-style-type: none;
+  width: 100%;
+  padding: 10px 10px 10px 0px;
+
+}
+li:hover{
+  color: #437e4d;
+}
+
+.done {
+  opacity: .5;
+}
