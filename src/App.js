@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      list: []
+      list: ["Try adding some new tasks here!"]
     };
     this.completed = this.completed.bind(this);
   }
@@ -14,22 +14,21 @@ class App extends Component {
     var spliceElement = event.target.getAttribute("data-key");
     var array = this.state.list;
     array.splice(spliceElement, 1);
-    this.setState({list: array});
-  }
+    this.setState({ list: array });
+  };
   render() {
     const completed = this.completed;
     function updateArray(event) {
       if (event.which === 13 || event.keyCode === 13) {
         if (event.target.value !== "") {
           var update = this.state.list.concat(event.target.value);
-          this.setState({list: update});
-          event.target.value = ""
+          this.setState({ list: update });
+          event.target.value = "";
           return false;
         }
       }
       return true;
-    };
-
+    }
 
     return (
       <div className="App">
@@ -37,15 +36,28 @@ class App extends Component {
           <h2 className="appText">To Do List</h2>
         </div>
         <div className="appInput">
-          <input className="inputField" type="text" name="inputField" maxLength="41" onKeyPress={updateArray.bind(this)} placeholder="What do you have to do today..."></input>
+          <input
+            className="inputField"
+            type="text"
+            name="inputField"
+            maxLength="41"
+            onKeyPress={updateArray.bind(this)}
+            placeholder="What do you have to do today..."
+          />
         </div>
         <div className="container clearfix">
-          <ul className="ulContainer">
+          <ul className="ulContainer clearfix">
             {this.state.list.map(function(user, index) {
-              return <li key={index} className="item">
-                {user}
-                <input data-key={index} className="checkBox" type="checkbox" onClick={completed}></input>
-              </li>
+              return (
+                <li key={index} className="item">
+                  <p className="taskName">
+                    {user}
+                  </p>
+                  <a data-key={index} className="delete" onClick={completed}>
+                    Delete
+                  </a>
+                </li>
+              );
             })}
           </ul>
         </div>

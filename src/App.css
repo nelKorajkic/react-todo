@@ -18,7 +18,8 @@ body {
   -webkit-font-smoothing: anti-aliased;
   background-color: #94d59f;
   color: #437e4d;
-  box-shadow: 0px 33px 1px 10px rgba(34, 34, 34, .1);}
+  box-shadow: 0px 33px 1px 10px rgba(34, 34, 34, .1);
+}
 
 .appInput {
   background-color: #437e4d;
@@ -51,25 +52,23 @@ body {
   box-shadow: 0px 1px 5px rgba(0, 0, 0, .4);
   clear: both;
   height: auto;
-
 }
 .clearfix:after {
-   content: " "; /* Older browser do not support empty content */
-   visibility: hidden;
-   display: block;
-   height: 0;
-   clear: both;
+  content: " "; /* Older browser do not support empty content */
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
 }
 
 .ulContainer {
-  margin-left: auto;
-  margin-right: auto;
+  /*margin-left: auto;
+  margin-right: auto;*/
   transition: display 2s ease-out 1s;
-
 }
 .item {
-  transition: display 2s ease-out 1s;
-  float: left;
+  /*transition: display 2s ease-out 1s;*/
+  /*float: left;*/
 }
 .checkBox {
   transition: display 2s ease-out 1s;
@@ -80,13 +79,47 @@ li {
   transition: display 2s ease-out 1s;
   list-style-type: none;
   width: 100%;
-  padding: 10px 10px 10px 0px;
-
+  border-top: 1px solid lightgray;
+  background-color: white;
+  transition: all 3000ms 1000ms ease-in-out;
+  -webkit-transition: -webkit-transform all 2s ease-out;
+  -moz-transition: -moz-transform all 2s ease-out;
 }
-li:hover{
+li:hover {
   color: #437e4d;
+  box-shadow: 2px 6px 20px lightgray;
+  transform: scale(1.03);
+}
+li:first-child {
+  border: none;
 }
 
 .done {
   opacity: .5;
+}
+
+.delete {
+  margin: auto;
+  padding: 6px 9px;
+  background-color: #f16b6f;
+  color: white;
+  border-radius: 4px;
+  margin-right: 6px;
+  margin-left: 6px;
+  flex: 1 1 auto;
+  cursor: pointer;
+}
+
+li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+ul {
+  padding: 0px;
+}
+
+.taskName {
+  flex: 1 0 90%;
 }
