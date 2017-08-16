@@ -9,7 +9,11 @@ class App extends Component {
     };
     this.completed = this.completed.bind(this);
   }
-
+  componentDidMount() {
+    fetch("/users")
+      .then(res => res.json())
+      .then(list => this.setState({ list }));
+  }
   completed = function(event) {
     var spliceElement = event.target.getAttribute("data-key");
     var array = this.state.list;
@@ -21,7 +25,9 @@ class App extends Component {
     function updateArray(event) {
       if (event.which === 13 || event.keyCode === 13) {
         if (event.target.value !== "") {
-          var update = this.state.list.concat(event.target.value);
+          var obj = { task: event.target.value };
+          var update = this.state.list.concat(obj);
+
           this.setState({ list: update });
           event.target.value = "";
           return false;
@@ -51,7 +57,7 @@ class App extends Component {
               return (
                 <li key={index} className="item">
                   <p className="taskName">
-                    {user}
+                    {user.task}
                   </p>
                   <a data-key={index} className="delete" onClick={completed}>
                     Delete

@@ -81,9 +81,9 @@ li {
   width: 100%;
   border-top: 1px solid lightgray;
   background-color: white;
-  transition: all 3000ms 1000ms ease-in-out;
-  -webkit-transition: -webkit-transform all 2s ease-out;
-  -moz-transition: -moz-transform all 2s ease-out;
+  transition: all 200ms 100ms ease-in-out;
+  -webkit-transition: -webkit-transform all 500ms ease-out;
+  -moz-transition: -moz-transform all 500mss ease-out;
 }
 li:hover {
   color: #437e4d;
